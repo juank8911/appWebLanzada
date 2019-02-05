@@ -1,6 +1,6 @@
 <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Prevenir</a>
+        <a class="navbar-brand" [routerLink]="['/home']">Prevenir</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -8,23 +8,23 @@
           <ul class="navbar-nav">
            
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']" >Inicio</a>
+              <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active-navegacion']" >Inicio</a>
             </li>
     
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/publicaciones']" [routerLinkActive]="['active']">Gestionar publicaciones</a>
+                <a class="nav-link" [routerLink]="['/publicaciones']" [routerLinkActive]="['active-navegacion']">Gestionar publicaciones</a>
             </li>
     
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/medicos']" [routerLinkActive]="['active']">Gestionar medicos</a>
+                <a class="nav-link" [routerLink]="['/medicos']" [routerLinkActive]="['active-navegacion']">Gestionar medicos</a>
             </li>
     
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/contactenos']" [routerLinkActive]="['active']">Contactenos</a>
+                <a class="nav-link" [routerLink]="['/contactenos']" [routerLinkActive]="['active-navegacion']">Contactenos</a>
             </li>
     
             <li class="nav-item">
-                <a class="nav-link"[routerLink]="['/terminosycondiciones']" [routerLinkActive]="['active']">Terminos y condiciones</a>
+                <a class="nav-link"[routerLink]="['/terminosycondiciones']" [routerLinkActive]="['active-navegacion']">Terminos y condiciones</a>
             </li>
             
           </ul>

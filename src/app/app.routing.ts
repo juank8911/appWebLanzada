@@ -13,11 +13,9 @@ import { HomeComponent } from './components/home/home.component';
 import { BuscarCitaComponent } from './components/buscar-cita/buscar-cita.component';
 import { SlidersComponent } from './components/sliders/sliders.component';
 import { OrdenLlegadaComponent } from './components/orden-llegada/orden-llegada.component';
-import { InformacionComponent } from './agregar-servicio/components/informacion/informacion.component';
 import { HorarioComponent } from './agregar-servicio/components/horario/horario.component';
 import { ImagenesComponent } from './agregar-servicio/components/imagenes/imagenes.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-import { GestionarServiciosComponent } from './components/gestionar-servicios/gestionar-servicios.component';
 import { CalendarioCitasComponent } from './components/calendario-citas/calendario-citas.component';
 import { GestionarCitasComponent } from './components/gestionar-citas/gestionar-citas.component';
 import { AprobarPublicacionesComponent } from './components/aprobar-publicaciones/aprobar-publicaciones.component';
@@ -38,17 +36,14 @@ const appRoutes: Routes = [
     {path : 'buscarcita', component: BuscarCitaComponent },
     {path : 'slider', component: SlidersComponent },
     {path : 'ordenllegada', component: OrdenLlegadaComponent },
-    // {path : 'informacion', component: InformacionComponent },
-    // {path : 'horario', component: HorarioComponent },
-    // {path : 'imagenes', component: ImagenesComponent },
     {path : 'perfil', component: PerfilComponent },
-    {path : 'servicios', component: GestionarServiciosComponent },
     {path : 'calendario', component: CalendarioCitasComponent },
     {path : 'citas', component: GestionarCitasComponent },
     {path : 'apropublicaciones', component: AprobarPublicacionesComponent },
     {path : 'contactenosroot', component: ContactenosRootComponent },
     {path : 'slidersroot', component: SlidersRootComponent },
     {path : 'listaPacientes', component: ListadoPacientesComponent },
+    {path: '**', component: HomeComponent}
 
 ];
 
