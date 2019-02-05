@@ -1,55 +1,50 @@
 <div id="navbar">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Prevenir</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+       
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
 
-       <a class="navbar-brand" href="#">Prevenir</a>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Gestionar publicaciones</a>
+        </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="#">Gestionar medicos</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contactenos</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">Terminos y condiciones</a>
+        </li>
         
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      </ul>
 
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav">
-
-        
-              <li> <a href="" class="nav-link active">
-                <span class="glyphicon glyphicon-asterisk"></span>
-                Inicio</a> 
-              </li>
-    
-              
-              
-              <li> <a href="" class="nav-link active">
-                <span class="glyphicon glyphicon-asterisk"></span>
-                Gestionar Publicaciones</a> 
-              </li>
-
-              <li> <a href="" class="nav-link active">
-                <span class="glyphicon glyphicon-asterisk"></span>
-                Gestionar Medicos</a> 
-              </li>
-
-              <li> <a href="" class="nav-link active">
-                  <span class="glyphicon glyphicon-asterisk"></span>
-                  Contactenos</a> 
-              </li>
-
-          </ul>
-
-          <ul class="navbar navbar-nav navbar-right" >
-              
-              <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                 Mi cuenta <span class="caret"></span>
-                </a>
-
-                <ul class="dropdown-menu">
-                  <li><a [routerLink]="['/perfil', identity._id]"><span class="glyphicon glyphicon-user"></span> Mi perfil</a></li>
-                  <li><a href=""><span class="glyphicon glyphicon-cog"></span> Mis datos</a></li>
-                  <li><a href="" class="pointer" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a></li>
-                </ul>
-              </li>
-            </ul>
-        </div>
-      </nav>
     </div>
+
+    <div id="sesion">
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown navbar-right">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Nombre usuario
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Nombre</a>
+              <a class="dropdown-item" href="#">Perfil</a>
+              <a class="dropdown-item" href="#">Cerrar sesión</a>
+            </div>
+          </li>
+    </ul>
+
+  </div>
+  </nav>
+</div>
