@@ -24,7 +24,7 @@ import { AprobarPublicacionesComponent } from './components/aprobar-publicacione
 import { ContactenosRootComponent } from './components/contactenos-root/contactenos-root.component';
 import { SlidersRootComponent } from './components/sliders-root/sliders-root.component';
 import { ListadoPacientesComponent } from './components/listado-pacientes/listado-pacientes.component';
- 
+
 
 const appRoutes: Routes = [
     {path: '', component : LoginComponent},
@@ -38,9 +38,9 @@ const appRoutes: Routes = [
     {path : 'buscarcita', component: BuscarCitaComponent },
     {path : 'slider', component: SlidersComponent },
     {path : 'ordenllegada', component: OrdenLlegadaComponent },
-    //{path : 'informacion', component: InformacionComponent },
-    //{path : 'horario', component: HorarioComponent },
-    //{path : 'imagenes', component: ImagenesComponent },
+    // {path : 'informacion', component: InformacionComponent },
+    // {path : 'horario', component: HorarioComponent },
+    // {path : 'imagenes', component: ImagenesComponent },
     {path : 'perfil', component: PerfilComponent },
     {path : 'servicios', component: GestionarServiciosComponent },
     {path : 'calendario', component: CalendarioCitasComponent },
