@@ -1,5 +1,9 @@
+<div id="navbar">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Prevenir</a>
+
+       <a class="navbar-brand" href="#">Prevenir</a>
+
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -7,25 +11,45 @@
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav">
 
-              <li> <a href="" class="nav-link">
+        
+              <li> <a href="" class="nav-link active">
                 <span class="glyphicon glyphicon-asterisk"></span>
                 Inicio</a> 
               </li>
-      
+    
+              
+              
+              <li> <a href="" class="nav-link active">
+                <span class="glyphicon glyphicon-asterisk"></span>
+                Gestionar Publicaciones</a> 
+              </li>
 
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
+              <li> <a href="" class="nav-link active">
+                <span class="glyphicon glyphicon-asterisk"></span>
+                Gestionar Medicos</a> 
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
+              <li> <a href="" class="nav-link active">
+                  <span class="glyphicon glyphicon-asterisk"></span>
+                  Contactenos</a> 
+              </li>
+
           </ul>
+
+          <ul class="navbar navbar-nav navbar-right" >
+              
+              <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                 Mi cuenta <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li><a [routerLink]="['/perfil', identity._id]"><span class="glyphicon glyphicon-user"></span> Mi perfil</a></li>
+                  <li><a href=""><span class="glyphicon glyphicon-cog"></span> Mis datos</a></li>
+                  <li><a href="" class="pointer" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a></li>
+                </ul>
+              </li>
+            </ul>
         </div>
       </nav>
+    </div>
