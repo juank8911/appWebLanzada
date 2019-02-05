@@ -27,6 +27,7 @@ import { AprobarPublicacionesComponent } from './components/aprobar-publicacione
 import { ContactenosRootComponent } from './components/contactenos-root/contactenos-root.component';
 import { SlidersRootComponent } from './components/sliders-root/sliders-root.component';
 import { ListadoPacientesComponent } from './components/listado-pacientes/listado-pacientes.component';
+import { BarraNavegacionComponent } from './components/barra-navegacion/barra-navegacion.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ListadoPacientesComponent } from './components/listado-pacientes/listad
     AprobarPublicacionesComponent,
     ContactenosRootComponent,
     SlidersRootComponent,
-    ListadoPacientesComponent
+    ListadoPacientesComponent,
+    BarraNavegacionComponent
   ],
   imports: [
     BrowserModule,
