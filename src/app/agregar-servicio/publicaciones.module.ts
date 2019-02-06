@@ -9,6 +9,7 @@ import { InformacionComponent } from './components/informacion/informacion.compo
 import { ImagenesComponent } from './components/imagenes/imagenes.component';
 import { HorarioComponent } from './components/horario/horario.component';
 
+
 // rutas
 
 import { PublicacionesRoutingModule } from './publicaciones-routing.module';
@@ -18,12 +19,12 @@ import { PublicacionesRoutingModule } from './publicaciones-routing.module';
         PublicacionesComponent,
         InformacionComponent,
         ImagenesComponent,
-        HorarioComponent
+        HorarioComponent,
     ],
     imports: [
         CommonModule,
         FormsModule,
-        PublicacionesRoutingModule
+        PublicacionesRoutingModule,
     ],
     exports : [
         PublicacionesComponent,

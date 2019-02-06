@@ -29,7 +29,7 @@ const appRoutes: Routes = [
     {path : 'login', component: LoginComponent},
     {path : 'registro', component: RegistroComponent},
     {path : 'home', component: HomeComponent},
-    {path : 'publicaciones', component: GestionarPublicacionesComponent },
+    // {path : 'publicaciones', component: GestionarPublicacionesComponent },
     {path : 'medicos', component: GestionarMedicosComponent },
     {path : 'contactenos', component: ContactenosComponent },
     {path : 'terminosycondiciones', component: TerminosYCondicionesComponent },
