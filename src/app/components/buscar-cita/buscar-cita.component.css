@@ -10,3 +10,34 @@
     padding: 10px 0 10px 0;
     color: aliceblue;
 }
+
+.card .name
+{
+    float:left;
+    margin-left:5px;
+    width: 150px;
+}
+
+.card .avatar {
+
+    width: 70px;
+    position: relative;
+    margin-left: 10px;
+    float:left;
+}
+
+.card .avatar img {
+    width: 70px;
+    height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.5);
+}
+
+.card .lista
+{
+    margin-top: 10px;
+}
