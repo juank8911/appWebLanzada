@@ -143,5 +143,32 @@
   margin: 0px;
 }
 
+/* GESTION PUBLICACIONES */
+
+#card-publicacion {
+  margin-top: 50px;
+  margin-left: 50px;
+
+}
+
+#card-publicacion .card {
+  width: 1000px;  
+  margin-top: 40px;
+}
+
+#card-publicacion .card a {
+  text-decoration: none;
+}
+
+#btn-agregar-pub{
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.abtn{
+  margin: 2px;
+}
+
+
 
 
