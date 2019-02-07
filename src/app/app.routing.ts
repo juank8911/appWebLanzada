@@ -23,6 +23,7 @@ import { ContactenosRootComponent } from './components/contactenos-root/contacte
 import { SlidersRootComponent } from './components/sliders-root/sliders-root.component';
 import { ListadoPacientesComponent } from './components/listado-pacientes/listado-pacientes.component';
 import { AgregarPublicacionComponent } from './agregar-servicio/components/agregar-publicacion/agregar-publicacion.component';
+import { VerPerfilMedicoComponent } from './components/ver-perfil-medico/ver-perfil-medico.component';
 
 const appRoutes: Routes = [
     {path: '', component : LoginComponent},
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     {path : 'contactenosroot', component: ContactenosRootComponent },
     {path : 'slidersroot', component: SlidersRootComponent },
     {path : 'listaPacientes', component: ListadoPacientesComponent },
+    {path : 'vermedico', component: VerPerfilMedicoComponent},
     {path: '**', component: HomeComponent}
 
 ];
