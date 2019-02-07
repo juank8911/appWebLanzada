@@ -41,3 +41,23 @@
 {
     margin-top: 10px;
 }
+
+.col .ver
+{
+    width: 65%;
+}
+
+.col
+{
+    text-align: center;
+}
+
+.scroll {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.container
+{
+    max-height: 100%;
+}
