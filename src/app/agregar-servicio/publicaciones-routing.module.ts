@@ -3,18 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 // componentes
-import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 import { ImagenesComponent } from './components/imagenes/imagenes.component';
 import { HorarioComponent } from './components/horario/horario.component';
+import { AgregarPublicacionComponent } from './components/agregar-publicacion/agregar-publicacion.component';
 
 const publicacionesRoutes: Routes = [
     {
-        path: 'publicaciones',
-        component: PublicacionesComponent,
+        path: 'agregar-publicacion',
+        component: AgregarPublicacionComponent,
         children: [
-            {path: '', redirectTo: 'publicaciones', pathMatch: 'full'},
-            {path: 'agregar', component: InformacionComponent},
+            {path: '', redirectTo: 'informacion', pathMatch: 'full'},
+            {path: 'informacion', component: InformacionComponent},
             {path: 'horario', component: HorarioComponent},
             {path: 'imagenes', component: ImagenesComponent},
          ]

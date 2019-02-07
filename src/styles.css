@@ -108,6 +108,17 @@
 }
 
 
+/* ACTIVE */
+
+.active-agregar-pub{
+  background: #6fbad6;
+}
+
+.active-navegacion{
+  background: #119ace;
+}
+
+
 /* HOME */
 
 #navbar nav {
@@ -118,9 +129,7 @@
   color: #f5f5f5 !important;
 }
 
-.active-navegacion{
-  background: #119ace;
-}
+
 
 /* SLIDER */
 
@@ -170,5 +179,26 @@
 }
 
 
+/* AGREGAR PUBLICACION */
+
+#panel-agregar-pub {
+  margin-top: 50px;
+}
+
+#panel-agregar-pub .list-group .list-group-item a {
+  color: black;
+}
+
+/* CENTRAR TEXTOS */
+
+.centrar {
+  text-align: center;
+}
+
+/* BOTONES MEDICO */
+
+#btns-medico p{
+  margin-bottom: 2px;
+}
 
 

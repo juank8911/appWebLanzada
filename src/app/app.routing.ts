@@ -22,14 +22,15 @@ import { AprobarPublicacionesComponent } from './components/aprobar-publicacione
 import { ContactenosRootComponent } from './components/contactenos-root/contactenos-root.component';
 import { SlidersRootComponent } from './components/sliders-root/sliders-root.component';
 import { ListadoPacientesComponent } from './components/listado-pacientes/listado-pacientes.component';
-
+import { AgregarPublicacionComponent } from './agregar-servicio/components/agregar-publicacion/agregar-publicacion.component';
 
 const appRoutes: Routes = [
     {path: '', component : LoginComponent},
     {path : 'login', component: LoginComponent},
+    {path : 'agregar-publicacion', component: AgregarPublicacionComponent},
     {path : 'registro', component: RegistroComponent},
     {path : 'home', component: HomeComponent},
-    // {path : 'publicaciones', component: GestionarPublicacionesComponent },
+    {path : 'publicaciones', component: GestionarPublicacionesComponent },
     {path : 'medicos', component: GestionarMedicosComponent },
     {path : 'contactenos', component: ContactenosComponent },
     {path : 'terminosycondiciones', component: TerminosYCondicionesComponent },
