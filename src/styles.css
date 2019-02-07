@@ -201,4 +201,36 @@
   margin-bottom: 2px;
 }
 
+/* VER PERFIL MEDICO */
+
+#info-perfil-medico{
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+#estudios-medico{
+  margin-top: 20px;
+}
+
+
+/* AVATAR BARRA DE NAVEGACION */
+
+#sesion img{
+  width: 35px;
+  height: 35px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-top: 9px;
+  margin-right: 2px;
+
+}
+
+#sesion img{
+
+  margin: 0px;
+  height: 38px;
+  width: 38px;
+
+}
+
 
