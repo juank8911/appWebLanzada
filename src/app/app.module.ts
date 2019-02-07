@@ -29,6 +29,9 @@ import { ListadoPacientesComponent } from './components/listado-pacientes/listad
 import { BarraNavegacionComponent } from './components/barra-navegacion/barra-navegacion.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { VerPerfilMedicoComponent } from './components/ver-perfil-medico/ver-perfil-medico.component';
+import { ModalVerPublicacionComponent } from './components/modal-ver-publicacion/modal-ver-publicacion.component';
+import { ModalCrearMedicoComponent } from './components/modal-crear-medico/modal-crear-medico.component';
+import { ModalAgregarEstudioMedicoComponent } from './components/modal-agregar-estudio-medico/modal-agregar-estudio-medico.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { VerPerfilMedicoComponent } from './components/ver-perfil-medico/ver-per
     ListadoPacientesComponent,
     BarraNavegacionComponent,
     FooterComponent,
-    VerPerfilMedicoComponent
+    VerPerfilMedicoComponent,
+    ModalVerPublicacionComponent,
+    ModalCrearMedicoComponent,
+    ModalAgregarEstudioMedicoComponent
   ],
   imports: [
     BrowserModule,
