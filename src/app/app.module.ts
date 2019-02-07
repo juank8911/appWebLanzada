@@ -28,6 +28,7 @@ import { SlidersRootComponent } from './components/sliders-root/sliders-root.com
 import { ListadoPacientesComponent } from './components/listado-pacientes/listado-pacientes.component';
 import { BarraNavegacionComponent } from './components/barra-navegacion/barra-navegacion.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { VerPerfilMedicoComponent } from './components/ver-perfil-medico/ver-perfil-medico.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { FooterComponent } from './components/footer/footer.component';
     SlidersRootComponent,
     ListadoPacientesComponent,
     BarraNavegacionComponent,
-    FooterComponent
+    FooterComponent,
+    VerPerfilMedicoComponent
   ],
   imports: [
     BrowserModule,
