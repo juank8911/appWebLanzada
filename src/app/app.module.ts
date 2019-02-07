@@ -32,6 +32,7 @@ import { VerPerfilMedicoComponent } from './components/ver-perfil-medico/ver-per
 import { ModalVerPublicacionComponent } from './components/modal-ver-publicacion/modal-ver-publicacion.component';
 import { ModalCrearMedicoComponent } from './components/modal-crear-medico/modal-crear-medico.component';
 import { ModalAgregarEstudioMedicoComponent } from './components/modal-agregar-estudio-medico/modal-agregar-estudio-medico.component';
+import { VerCitasCalendarioComponent } from './components/ver-citas-calendario/ver-citas-calendario.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ModalAgregarEstudioMedicoComponent } from './components/modal-agregar-e
     VerPerfilMedicoComponent,
     ModalVerPublicacionComponent,
     ModalCrearMedicoComponent,
-    ModalAgregarEstudioMedicoComponent
+    ModalAgregarEstudioMedicoComponent,
+    VerCitasCalendarioComponent
   ],
   imports: [
     BrowserModule,
