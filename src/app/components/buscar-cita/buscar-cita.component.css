@@ -4,6 +4,12 @@
    
    
 }
+
+#btnagregar
+{
+    border: white 10px;
+    
+}
 .curso
 {
     background-color:#007bff ;
@@ -60,4 +66,5 @@
 .container
 {
     max-height: 100%;
+   
 }
