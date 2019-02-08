@@ -1,0 +1,20 @@
+.contenedor
+{
+    overflow-x:scroll;
+    overflow-y:hidden;width:30em;height:110px
+}
+
+.scroll
+{
+    width:45em;
+    height:110px
+}
+
+.imga
+{
+    width: 100px;
+    height: 100px;
+    margin: 20px 10px;
+    display: inline;
+}
+

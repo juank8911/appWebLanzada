@@ -11,7 +11,7 @@
     <div class="col-lg-3">
       <br>
         <p class="p-btns">
-            <a href="" class="abtn btn-info btn-lg" role="button">Ver</a>
+            <a href="" class="abtn btn-info btn-lg" role="button" data-toggle="modal" data-target="#exampleModalLong" >Ver</a>
         </p>
         <p class="p-btns">
             <a href="" class="abtn btn-warning btn-lg" role="button">Editar</a>    
@@ -38,4 +38,25 @@
         <div class="col-lg-3">Botones</div>
       </div>
     </div>
+</div>
+
+              <!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">TITULO PUBLICACION</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <app-modal-ver-publicacion></app-modal-ver-publicacion>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
 </div>
