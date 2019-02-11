@@ -5,6 +5,9 @@ import { routing, appRoutingProviders } from './app.routing';
 // Modulos
 
 import { PublicacionesModule } from './agregar-servicio/publicaciones.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 
 // Componentes
@@ -32,7 +35,11 @@ import { VerPerfilMedicoComponent } from './components/ver-perfil-medico/ver-per
 import { ModalVerPublicacionComponent } from './components/modal-ver-publicacion/modal-ver-publicacion.component';
 import { ModalCrearMedicoComponent } from './components/modal-crear-medico/modal-crear-medico.component';
 import { ModalAgregarEstudioMedicoComponent } from './components/modal-agregar-estudio-medico/modal-agregar-estudio-medico.component';
-import { VerCitasCalendarioComponent } from './components/ver-citas-calendario/ver-citas-calendario.component';
+
+// Servicios
+import { ProvedorService } from './services/provedor.service';
+import { Global } from './services/global';
+
 
 @NgModule({
   declarations: [
@@ -60,15 +67,19 @@ import { VerCitasCalendarioComponent } from './components/ver-citas-calendario/v
     ModalVerPublicacionComponent,
     ModalCrearMedicoComponent,
     ModalAgregarEstudioMedicoComponent,
-    VerCitasCalendarioComponent
+
   ],
   imports: [
     BrowserModule,
     routing,
-    PublicacionesModule
+    PublicacionesModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    ProvedorService,
+    Global
   ],
   bootstrap: [AppComponent]
 })
