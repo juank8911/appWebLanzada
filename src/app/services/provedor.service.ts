@@ -3,6 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Global } from './global';
 import { Provedor } from '../models/provedor';
+import axios from 'axios'
+import { from } from 'rxjs';
+import { log } from 'util';
 
 @Injectable( )
 export class ProvedorService {
