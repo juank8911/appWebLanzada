@@ -39,6 +39,7 @@ import { ModalAgregarEstudioMedicoComponent } from './components/modal-agregar-e
 // Servicios
 import { ProvedorService } from './services/provedor.service';
 import { Global } from './services/global';
+import { ModalVerCitaComponent } from './components/modal-ver-cita/modal-ver-cita.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { Global } from './services/global';
     ModalVerPublicacionComponent,
     ModalCrearMedicoComponent,
     ModalAgregarEstudioMedicoComponent,
+    ModalVerCitaComponent,
 
   ],
   imports: [
