@@ -4,6 +4,7 @@
   
     <div class="alert alert-danger" *ngIf="status == 'login_false'">Usuario o contraseña incorrectos. </div>
     <div class="alert alert-danger" *ngIf="status == 'error'">Error en la conexión, intentalo más tarde o revisa tu conexión.</div>
+    <div class="alert alert-danger" *ngIf="status == 'login_user'">Error cuenta de usuario.</div>
   
 <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
    
@@ -18,7 +19,7 @@
     </div>
     <div>
       <label for="inputPassword" class="sr-only">Contraseña</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="pssw" #pssw="ngModel" [(ngModel)]="user.pssw" required>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="pssw" #pssw="ngModel" [(ngModel)]="user.pssw" required autofocus>
     </div>
     <!-- <div class="checkbox mb-3"> -->
       <!-- <label>
@@ -26,10 +27,12 @@
       </label> -->
     <!-- </div> -->
     <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginForm.form.valid">Iniciar sesion</button>
+    <button class="btn btn-lg btn-primary btn-block" type="button" (click)="goToRegister()">Registrate</button>
     <br>
     <a href="" class="olvido-contrasenia">¿ Olvido su contraseña ?</a>
     <p class="mt-5 mb-3 text-muted">&copy; 2018-2019 - SecurTec</p>
 
   </form>
+
 
 </div>

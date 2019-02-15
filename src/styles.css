@@ -52,6 +52,12 @@
     text-align: center;
 }
 
+.btn-primary.disabled, .btn-primary:disabled {
+  color: black;
+  background-color: #DCDCDC;
+  border-color: #DCDCDC;
+}
+
 /* Registro */
 
 #registro body {
@@ -72,7 +78,7 @@
   width: 100%;
   max-width: 330px;
   padding: 15px;
-  margin-top: 50px !important; 
+  margin-top: 20px !important; 
   margin: auto;
   text-align: center;
   /* margin-top: 150px;
@@ -107,6 +113,9 @@
     text-align: center;
 }
 
+#registro .form-signin img {
+  margin-bottom: 25px;
+}
 
 /* ACTIVE */
 
@@ -178,6 +187,11 @@
   margin: 2px;
 }
 
+.img-pub img{
+  height: 250px;
+  width: 250px;
+}
+
 
 /* AGREGAR PUBLICACION */
 
@@ -206,6 +220,12 @@
 #info-perfil-medico{
   margin-top: 30px;
   margin-left: 30px;
+}
+
+#info-perfil-medico img {
+  height: 250px;
+  width: 250px;
+  margin-bottom: 25px;
 }
 
 #estudios-medico{
@@ -253,6 +273,11 @@
   margin-left: 30px;
 }
 
+#perfil-provedor-imagen img {
+  height: 250px;
+  width: 250px;
+}
+
 #perfil-provedor-formulario{
   margin-top: 30px;
 }
@@ -260,6 +285,15 @@
 #perfil-provedor-formulario form {
   margin-top: 50px;
 }
+
+/* GESTIONAR MEDICOS */
+
+.img-medico img {
+  height: 250px;
+  width: 250px;
+}
+
+
 
 
 

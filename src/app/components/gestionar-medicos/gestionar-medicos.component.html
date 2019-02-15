@@ -3,7 +3,7 @@
 <div id="btn-agregar-pub"><h1>Mis Medicos ! &nbsp;  <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">Crear Medico</button></h1>
 </div>
 
-<!-- Large modal -->
+<!-- MODAL CREAR MEDICO -->
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -25,28 +25,30 @@
 <!-- ---------------------------------------------------------- -->
 
 <div id="card-publicacion">   
-<div class="card ">
+<div class="card" *ngFor="let m of medicos">
   <div class="row">
-    <div class="col-lg-3"><img src="assets/consumidor.png" alt=""></div>
+    <div class="col-lg-3 img-medico"><img src="{{m.avatar}}" alt=""></div>
     <div class="col-lg-6">
-        <h3>Nombre Medico</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil excepturi quae minus dolore omnis consectetur molestiae a. Quis dolorum debitis nesciunt, expedita voluptates asperiores, veritatis architecto provident ab amet doloribus doloremque similique assumenda repudiandae iusto itaque? Esse quasi hic quos vero eum provident accusantium aliquam odio fugit iusto nihil excepturi, expedita dolorem, laborum nulla quia tenetur aperiam assumenda, id maiores ipsam omnis officiis? Sed sit assumenda neque laudantium, facere quia nemo illo quas harum exercitationem porro voluptatibus voluptate eius.</p>
+        <h3>{{m.nombre}}</h3>
+        <br>
+        <p><strong>Tarjeta profecional :</strong> {{m.tarj_profecional}}</p>
+        <p><strong>Titulo : </strong> {{m.titulo}}</p>
+        <p><strong>No. Contacto : </strong> {{m.telefono}}</p>
+        <p><strong>Whatsapp : </strong> {{m.whatsapp}}</p>
     </div>
     <div class="col-lg-3" id="btns-medico">
             <br>
               <p class="p-btns">
-                  <button type="button" class="btn btn-info" [routerLink]="['/vermedico']">
+                  <button type="button" class="btn btn-info" (click)="verMedico(m.medico_id)">
                       Ver
                     </button>
               </p>
               <p class="p-btns">
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
-                      Eliminar
-                    </button>
+                <a href="#myModal{{m.medico_id}}" role="button" class="btn btn-danger" data-toggle="modal">Eliminar</a>
               </p>
 
               <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="myModal{{m.medico_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -56,11 +58,11 @@
           </button>
         </div>
         <div class="modal-body">
-         ¿ Estas seguro que deseas eliminar el medico NOMBRE DEL MEDICO?
+         ¿ Estas seguro que deseas eliminar el medico {{m.nombre}}?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-danger">Eliminar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteMedico(m.medico_id)">Eliminar</button>
         </div>
       </div>
     </div>

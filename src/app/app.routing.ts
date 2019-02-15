@@ -30,7 +30,7 @@ const appRoutes: Routes = [
     {path : 'login', component: LoginComponent},
     {path : 'agregar-publicacion', component: AgregarPublicacionComponent},
     {path : 'registro', component: RegistroComponent},
-    {path : 'home/:id/:esAdmin', component: HomeComponent},
+    {path : 'home', component: HomeComponent},
     {path : 'publicaciones', component: GestionarPublicacionesComponent },
     {path : 'medicos', component: GestionarMedicosComponent },
     {path : 'contactenos', component: ContactenosComponent },
@@ -45,7 +45,7 @@ const appRoutes: Routes = [
     {path : 'contactenosroot', component: ContactenosRootComponent },
     {path : 'slidersroot', component: SlidersRootComponent },
     {path : 'listaPacientes', component: ListadoPacientesComponent },
-    {path : 'vermedico', component: VerPerfilMedicoComponent},
+    {path : 'vermedico/:id', component: VerPerfilMedicoComponent},
     {path: '**', component: HomeComponent}
 
 ];

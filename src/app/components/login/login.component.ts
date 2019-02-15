@@ -33,11 +33,19 @@ export class LoginComponent implements OnInit {
 
       console.log(response);
 
+      if (response.esAdmin === 2) {
+        this.status = 'login_user';
+
+      } else {
+
       if (response.login === true) {
-        this._router.navigate(['/home/', response.id_usuario, response.esAdmin ]);
+
         localStorage.setItem('token', JSON.stringify(response.token));
+        this.identity(response.id_usuario);
       } else {
         this.status = 'login_false';
+      }
+
       }
 
     }, (err) => {
@@ -48,5 +56,28 @@ export class LoginComponent implements OnInit {
     // this._router.navigate(['/home']);
 
   }
+
+
+  identity(id) {
+
+      console.log(id);
+
+      this._provedorService.getIdentity(id).subscribe( (response) => {
+        console.log(response);
+
+        localStorage.setItem('identity', JSON.stringify(response));
+        this._router.navigate(['/home']);
+
+         // this._router.navigate(['/home/', response.id_usuario, response.esAdmin ]);
+
+      }, (err) => {
+        console.log(err);
+      });
+  }
+
+  goToRegister() {
+    this._router.navigate(['/registro']);
+   }
+
 
 }

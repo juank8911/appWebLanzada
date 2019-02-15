@@ -5,9 +5,13 @@
 <div class="row">
   <div class="col-lg-3">
     <div id="perfil-provedor-imagen">
-        <img src="assets/consumidor.png" alt="">
+        <img src="{{global.apiUrl + identity.avatar}}" alt="">
         <br>
-     <p>Descripcion : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas laboriosam dolore odio in vero ut, fuga aut, consequuntur quia ea doloremque voluptatibus perspiciatis autem veritatis non excepturi fugiat unde rerum officiis nemo optio harum. Quod aliquid odio eaque possimus architecto rem reiciendis sapiente quaerat hic alias iste, cum voluptas aspernatur?</p>
+        <div>
+          <h4><strong>{{identity.nombre}}</strong></h4>
+          <p>Descripcion : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas laboriosam dolore odio in vero ut, fuga aut, consequuntur quia ea doloremque voluptatibus perspiciatis autem veritatis non excepturi fugiat unde rerum officiis nemo optio harum. Quod aliquid odio eaque possimus architecto rem reiciendis sapiente quaerat hic alias iste, cum voluptas aspernatur?</p>
+        </div>
+   
     </div>
    
   </div>
@@ -26,37 +30,50 @@
               </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group input-group-prepend">
                 <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="mail@ejemplo.com">
+                <!-- <span class="fab fa-angular"></span> -->
+                <span class="input-group-text">Email</span>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="mail@ejemplo.com" value="{{identity.correo}}" readonly>
                 <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
               </div>
 
-              <div class="form-group">
+              <div class="form-group input-group-prepend">
                   <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de la empresa">
+                  <span class="input-group-text">Nombre</span>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de la empresa" value="{{identity.nombre}}" readonly>
                   <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+
+                <div class="form-group input-group-prepend">
+                    <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
+                    <span class="input-group-text">Nit</span>
+                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nit" value="{{identity.nit}}" readonly>
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                 </div>
 
                 <br>
                 <h2 class="centrar">Datos de contacto</h2>
                 <br>
 
-                <div class="form-group">
+                <div class="form-group input-group-prepend">
                     <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Direccion">
+                    <span class="input-group-text">Dirección</span>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Direccion" value="{{identity.direccion}}">
                     <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group input-group-prepend">
                       <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
-                      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="telefono">
+                      <span class="input-group-text">Telefono</span>
+                      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="telefono" value="{{identity.telefono}}">
                       <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group input-group-prepend">
                       <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
-                      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="whatsapp">
+                      <span class="input-group-text">Whatspp</span>
+                      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="whatsapp" value="{{identity.whatsapp}}">
                       <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                     </div>
 
@@ -64,26 +81,28 @@
                   <h2 class="centrar">Datos de provedor</h2>
                   <br>
 
-                  <div class="form-group">
+                  <div class="form-group input-group-prepend">
                       <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nombre clinica">
+                      <span class="input-group-text">Nombre</span>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nombre clinica" value="{{identity.nombre}}">
                       <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group input-group-prepend">
                       <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
-                      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nit">
+                      <span class="input-group-text">link sitio web / fan page facebook</span>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="link sitio web / fan page facebook" value="{{identity.link}}">
                       <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group input-group-prepend">
                       <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="link sitio web / fan page facebook">
+                      <span class="input-group-text">Descripcion</span>
+                      <textarea>{{identity.descripcion}}</textarea>
                       <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                   </div>
               
       </form>
-
 
     </div>
 

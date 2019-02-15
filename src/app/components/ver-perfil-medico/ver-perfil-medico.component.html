@@ -1,18 +1,18 @@
 <app-barra-navegacion> </app-barra-navegacion>
 
-<div class="row">
+<div class="row" *ngIf="infoMedico">
   <div class="col-lg-3" id="info-perfil-medico">
-    <img src="assets/consumidor.png" alt="">
+    <img src="{{infoMedico.avatar}}" alt="">
+    
+    <div class="info-medico">
 
-    <div>
-
-    <p><strong>Nombres :</strong> Doctor</p>
-    <p><strong>Apellidos :</strong> Chapatin</p>
-    <p><strong>Especialidad :</strong> Medico general</p>
-    <p><strong>Tarjeta profecional :</strong> 4543463454545</p>
-    <p><strong>Identificación :</strong> 45524454</p>
-    <p><strong>No. Contacto :</strong> 4545645645</p>
-    <p><strong>Whatsapp :</strong> 14343321</p>
+    <p><strong>Nombres :</strong> {{infoMedico.nombres}}</p>
+    <p><strong>Apellidos :</strong> {{infoMedico.apellidos}}</p>
+    <p><strong>Titulo :</strong> {{infoMedico.titulo}}</p>
+    <p><strong>Tarjeta profecional :</strong> {{infoMedico.tarj_profecional}}</p>
+    <p><strong>Identificación :</strong> {{infoMedico.cedula}}</p>
+    <p><strong>No. Contacto :</strong> {{infoMedico.telefono}}</p>
+    <p><strong>Whatsapp :</strong> {{infoMedico.whatsapp}}</p>
 
     </div>
   </div>

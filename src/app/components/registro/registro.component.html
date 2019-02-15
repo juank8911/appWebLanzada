@@ -1,22 +1,25 @@
 <div id="registro">
-<form class="form-signin">
+    <div class="alert alert-danger" *ngIf="status == 'email'">El correo esta repetido.</div>
+<form class="form-signin" #registroForm="ngForm" (ngSubmit)="registro(registroForm)">
+    <img  src="assets/logo.png" alt="">
+    <br>
    
-    <input type="text" class="form-control" placeholder="Nombre de la empresa" required>
-    <input type="email" class="form-control" placeholder="ejemplo@mail.com" required autofocus>
+    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="user.nombre" class="form-control" placeholder="Nombre de la empresa" required>
+    <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email"  class="form-control" placeholder="ejemplo@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required autofocus>
     
-    <input type="text"  class="form-control" placeholder="Dirección" required>
-    <input type="text"  class="form-control" placeholder="Nit" required>
-    <input type="number"  class="form-control" placeholder="Telefono" required>
-    <input type="number"  class="form-control" placeholder="Whatsapp" required>
-    <input type="password"  class="form-control" placeholder="Contraseña" required>
-    <input type="password"  class="form-control" placeholder="Confirmar contraseña" required>
-    <!-- <div class="checkbox mb-3"> -->
+    <input type="text" name="direccion" #direccion="ngModel" [(ngModel)]="user.direccion" class="form-control" placeholder="Dirección" required>
+    <input type="number" name="nit" #nit="ngModel" [(ngModel)]="user.nit" class="form-control" placeholder="Nit" required>
+    <input type="number" name="tel" #tel="ngModel" [(ngModel)]="user.tel" class="form-control" placeholder="Telefono" required>
+    <input type="number" name="wsp" #wsp="ngModel" [(ngModel)]="user.wsp" class="form-control" placeholder="Whatsapp" required>
+    <input type="password" name="psw" #psw="ngModel" [(ngModel)]="user.psw" class="form-control" placeholder="Contraseña" required>
+    <input type="password" name="confirmPsw" #confirmPsw="ngModel" [(ngModel)]="user.confirmPsw" class="form-control" placeholder="Confirmar contraseña" required>
+    <!-- <div class="checkbox mb-3"> -->  
       <!-- <label>
         <input type="checkbox" value="remember-me"> Remember me
       </label> -->
     <!-- </div> -->
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarse</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2018-2019 - SecurTec</p>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!registroForm.form.valid">Registrarse</button>
+    <p class="mt-4 mb-2 text-muted">&copy; 2018-2019 - SecurTec</p>
 
   </form>
 

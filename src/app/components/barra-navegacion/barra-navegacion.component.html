@@ -42,12 +42,12 @@
               <ul class="nav navbar-nav navbar-right">
 
                 <li>
-                    <img src="assets/user.png" alt="">
+                    <img src="{{global.apiUrl + identity.avatar}}" alt="">
                 </li>
                  
                   <li class="nav-item dropdown navbar-right">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Nombre usuario
+                        {{identity.nombre}}
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" [routerLink]="['/perfil']">Mi Perfil</a>

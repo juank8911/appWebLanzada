@@ -4,10 +4,12 @@
 </div>
 
 <div id="card-publicacion">   
-<div class="card ">
+<div class="card " *ngFor="let p of publications">
   <div class="row">
-    <div class="col-lg-3"><img src="assets/consumidor.png" alt=""></div>
-    <div class="col-lg-6"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil excepturi quae minus dolore omnis consectetur molestiae a. Quis dolorum debitis nesciunt, expedita voluptates asperiores, veritatis architecto provident ab amet doloribus doloremque similique assumenda repudiandae iusto itaque? Esse quasi hic quos vero eum provident accusantium aliquam odio fugit iusto nihil excepturi, expedita dolorem, laborum nulla quia tenetur aperiam assumenda, id maiores ipsam omnis officiis? Sed sit assumenda neque laudantium, facere quia nemo illo quas harum exercitationem porro voluptatibus voluptate eius.</p></div>
+    <div class="col-lg-3 img-pub"><img src="{{global.apiUrl + p.foto}}" alt=""></div>
+    <div class="col-lg-6"><h3><strong>{{p.nombre}}</strong></h3>
+      <p>{{p.descripcion}}</p>
+    </div>
     <div class="col-lg-3">
       <br>
         <p class="p-btns">
@@ -21,23 +23,6 @@
         </p>
     </div>
   </div>
-</div>
-
-<div class="card ">
-    <div class="row">
-      <div class="col-lg-3"><img src="assets/consumidor.png" alt=""></div>
-      <div class="col-lg-6"><p>Descripcion asd asld asld hasld hasld haslhd lashd lasdh alsdh lñsa hsadh fsádh fsa´dfh ´sad hfdsá fhsádl hf</p></div>
-      <div class="col-lg-3">Botones</div>
-    </div>
-  </div>
-
-  <div class="card ">
-      <div class="row">
-        <div class="col-lg-3"><img src="assets/consumidor.png" alt=""></div>
-        <div class="col-lg-6"><p>Descripcion asd asld asld hasld hasld haslhd lashd lasdh alsdh lñsa hsadh fsádh fsa´dfh ´sad hfdsá fhsádl hf</p></div>
-        <div class="col-lg-3">Botones</div>
-      </div>
-    </div>
 </div>
 
               <!-- Modal -->
