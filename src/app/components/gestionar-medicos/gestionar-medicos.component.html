@@ -1,6 +1,21 @@
 <app-barra-navegacion></app-barra-navegacion>
 
-<div id="btn-agregar-pub"><h1>Mis Medicos ! &nbsp;  <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">Crear Medico</button></h1>
+<div id="btn-agregar-pub"><h1>Mis Medicos ! &nbsp;  <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i>&nbsp; Crear Medico</button></h1>
+</div>
+
+
+<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="status == 'eliminado'">
+     El medico ha sido eliminado con exito.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="status == 'no_eliminado'">
+  El medico no se puede eliminar por que tiene un servicio asociado, elimina primero el servicio.
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+ <span aria-hidden="true">&times;</span>
+</button>
 </div>
 
 <!-- MODAL CREAR MEDICO -->
@@ -9,7 +24,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Crear Medico</h5>
+            <h3 class="modal-title" id="exampleModalLabel">Crear Medico</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

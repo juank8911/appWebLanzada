@@ -24,28 +24,29 @@ import { SlidersRootComponent } from './components/sliders-root/sliders-root.com
 import { ListadoPacientesComponent } from './components/listado-pacientes/listado-pacientes.component';
 import { AgregarPublicacionComponent } from './agregar-servicio/components/agregar-publicacion/agregar-publicacion.component';
 import { VerPerfilMedicoComponent } from './components/ver-perfil-medico/ver-perfil-medico.component';
+import { UserGuard } from './services/user.guard';
 
 const appRoutes: Routes = [
     {path: '', component : LoginComponent},
     {path : 'login', component: LoginComponent},
-    {path : 'agregar-publicacion', component: AgregarPublicacionComponent},
+    {path : 'agregar-publicacion', component: AgregarPublicacionComponent, canActivate: [UserGuard]},
     {path : 'registro', component: RegistroComponent},
-    {path : 'home', component: HomeComponent},
-    {path : 'publicaciones', component: GestionarPublicacionesComponent },
-    {path : 'medicos', component: GestionarMedicosComponent },
-    {path : 'contactenos', component: ContactenosComponent },
-    {path : 'terminosycondiciones', component: TerminosYCondicionesComponent },
-    {path : 'buscarcita', component: BuscarCitaComponent },
-    {path : 'slider', component: SlidersComponent },
-    {path : 'ordenllegada', component: OrdenLlegadaComponent },
-    {path : 'perfil', component: PerfilComponent },
-    {path : 'calendario', component: CalendarioCitasComponent },
-    {path : 'citas', component: GestionarCitasComponent },
-    {path : 'apropublicaciones', component: AprobarPublicacionesComponent },
-    {path : 'contactenosroot', component: ContactenosRootComponent },
-    {path : 'slidersroot', component: SlidersRootComponent },
-    {path : 'listaPacientes', component: ListadoPacientesComponent },
-    {path : 'vermedico/:id', component: VerPerfilMedicoComponent},
+    {path : 'home', component: HomeComponent, canActivate: [UserGuard]},
+    {path : 'publicaciones', component: GestionarPublicacionesComponent, canActivate: [UserGuard]},
+    {path : 'medicos', component: GestionarMedicosComponent, canActivate: [UserGuard]},
+    {path : 'contactenos', component: ContactenosComponent, canActivate: [UserGuard] },
+    {path : 'terminosycondiciones', component: TerminosYCondicionesComponent, canActivate: [UserGuard] },
+    {path : 'buscarcita', component: BuscarCitaComponent, canActivate: [UserGuard] },
+    {path : 'slider', component: SlidersComponent, canActivate: [UserGuard] },
+    {path : 'ordenllegada', component: OrdenLlegadaComponent, canActivate: [UserGuard] },
+    {path : 'perfil', component: PerfilComponent, canActivate: [UserGuard] },
+    {path : 'calendario', component: CalendarioCitasComponent, canActivate: [UserGuard] },
+    {path : 'citas', component: GestionarCitasComponent, canActivate: [UserGuard] },
+    {path : 'apropublicaciones', component: AprobarPublicacionesComponent, canActivate: [UserGuard] },
+    {path : 'contactenosroot', component: ContactenosRootComponent, canActivate: [UserGuard] },
+    {path : 'slidersroot', component: SlidersRootComponent, canActivate: [UserGuard] },
+    {path : 'listaPacientes', component: ListadoPacientesComponent, canActivate: [UserGuard]},
+    {path : 'vermedico/:id', component: VerPerfilMedicoComponent, canActivate: [UserGuard]},
     {path: '**', component: HomeComponent}
 
 ];

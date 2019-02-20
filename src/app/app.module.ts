@@ -35,11 +35,13 @@ import { VerPerfilMedicoComponent } from './components/ver-perfil-medico/ver-per
 import { ModalVerPublicacionComponent } from './components/modal-ver-publicacion/modal-ver-publicacion.component';
 import { ModalCrearMedicoComponent } from './components/modal-crear-medico/modal-crear-medico.component';
 import { ModalAgregarEstudioMedicoComponent } from './components/modal-agregar-estudio-medico/modal-agregar-estudio-medico.component';
+import { ModalVerCitaComponent } from './components/modal-ver-cita/modal-ver-cita.component';
 
 // Servicios
 import { ProvedorService } from './services/provedor.service';
 import { Global } from './services/global';
-import { ModalVerCitaComponent } from './components/modal-ver-cita/modal-ver-cita.component';
+import { UserService } from './services/user.service';
+import { UserGuard } from './services/user.guard';
 
 
 @NgModule({
@@ -81,6 +83,8 @@ import { ModalVerCitaComponent } from './components/modal-ver-cita/modal-ver-cit
   providers: [
     appRoutingProviders,
     ProvedorService,
+    UserGuard,
+    UserService,
     Global
   ],
   bootstrap: [AppComponent]

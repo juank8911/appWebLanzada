@@ -13,6 +13,7 @@ import { Global } from '../../services/global';
 export class GestionarPublicacionesComponent implements OnInit {
   public identity;
   public publications;
+  public vacio;
 
   constructor(public _userService: UserService, public _provedorService: ProvedorService, public global: Global) { }
 
@@ -28,8 +29,13 @@ export class GestionarPublicacionesComponent implements OnInit {
   getPublications(id) {
 
     this._provedorService.getPublications(id).subscribe( (response) => {
+
         this.publications = response;
         console.log(this.publications);
+
+      if (this.publications[0].vacio === true) {
+        this.vacio = true;
+      }
     }, (err) => {
       console.log(err);
     });

@@ -7,7 +7,9 @@ import { Global } from './global';
 @Injectable( )
 export class UserService {
     public identity;
+    public token;
 
+    // Obtener la identidad del usuario almacenada en el local storage
     getIdentity() {
         let identity_ls = JSON.parse(localStorage.getItem('identity'));
 
@@ -18,6 +20,19 @@ export class UserService {
         }
 
         return this.identity;
+    }
+
+    // Obtener el token del usuario logueado, almacenado en el local storage
+    getToken() {
+        let token_ls = JSON.parse(localStorage.getItem('token'));
+
+        if (token_ls !== 'undefined') {
+            this.token = token_ls;
+        } else {
+            this.token = null;
+        }
+
+        return this.token;
     }
 
 }

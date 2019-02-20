@@ -5,11 +5,13 @@ import { FormControl } from '@angular/forms';
 import { Member } from '../../models/member';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ProvedorService } from '../../services/provedor.service';
+import { MedicoService } from '../../services/medico.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [ProvedorService]
+  providers: [ProvedorService, MedicoService]
 })
 export class LoginComponent implements OnInit {
   public user: Member;
@@ -17,7 +19,8 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private _router: Router, private _route: ActivatedRoute, private _provedorService: ProvedorService) {
+  constructor(private _router: Router, private _route: ActivatedRoute, private _provedorService: ProvedorService,
+    private _medicoService: MedicoService) {
 
     this.user = new Member('', '');
   }
@@ -33,19 +36,25 @@ export class LoginComponent implements OnInit {
 
       console.log(response);
 
-      if (response.esAdmin === 2) {
-        this.status = 'login_user';
-
-      } else {
-
       if (response.login === true) {
 
-        localStorage.setItem('token', JSON.stringify(response.token));
-        this.identity(response.id_usuario);
+        if (response.esAdmin === 2) {
+          this.status = 'login_user';
+        }
+
+         if (response.esAdmin === 1) {
+
+          localStorage.setItem('token', JSON.stringify(response.token));
+
+          // true admin
+          this.identity(response.id_usuario, true);
+        } else if (response.esAdmin === 3) {
+
+          this.identity(response.id_usuario, false);
+        }
+
       } else {
         this.status = 'login_false';
-      }
-
       }
 
     }, (err) => {
@@ -58,21 +67,38 @@ export class LoginComponent implements OnInit {
   }
 
 
-  identity(id) {
+  identity(id, bol) {
 
       console.log(id);
 
-      this._provedorService.getIdentity(id).subscribe( (response) => {
-        console.log(response);
+      if (bol === true) {
 
-        localStorage.setItem('identity', JSON.stringify(response));
-        this._router.navigate(['/home']);
+        this._provedorService.getIdentity(id).subscribe( (response) => {
+          console.log(response);
 
-         // this._router.navigate(['/home/', response.id_usuario, response.esAdmin ]);
+         localStorage.setItem('identity', JSON.stringify(response));
+          this._router.navigate(['/home']);
 
-      }, (err) => {
-        console.log(err);
-      });
+           // this._router.navigate(['/home/', response.id_usuario, response.esAdmin ]);
+
+        }, (err) => {
+          console.log(err);
+        });
+
+      } else {
+
+        this._medicoService.getInfoMedico(id).subscribe( (response) => {
+          console.log(response);
+
+          let identity = response[0];
+          localStorage.setItem('identity', JSON.stringify(identity));
+          this._router.navigate(['/home']);
+        }, (err) => {
+          console.log(err);
+        });
+
+      }
+
   }
 
   goToRegister() {

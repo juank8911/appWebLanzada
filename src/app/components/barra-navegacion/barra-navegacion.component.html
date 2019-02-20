@@ -42,16 +42,22 @@
               <ul class="nav navbar-nav navbar-right">
 
                 <li>
-                    <img src="{{global.apiUrl + identity.avatar}}" alt="">
+                    <img *ngIf="identity.medico_id" src="{{identity.avatar}}" alt="">
+                    <img *ngIf="identity.id_provedor" src="{{global.apiUrl + identity.avatar}}" alt="">
                 </li>
                  
                   <li class="nav-item dropdown navbar-right">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a *ngIf="identity.medico_id" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{identity.nombres + ' ' +identity.apellidos}}
+                      </a>
+
+                      <a *ngIf="identity.id_provedor" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{identity.nombre}}
                       </a>
+
                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" [routerLink]="['/perfil']">Mi Perfil</a>
-                        <a class="dropdown-item" href="#">Cerrar sesión</a>
+                        <a class="dropdown-item" (click)="logOut()">Cerrar sesión</a>
                       </div>
                     </li>
               </ul>
