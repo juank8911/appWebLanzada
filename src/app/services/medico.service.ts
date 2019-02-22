@@ -44,11 +44,14 @@ export class MedicoService {
     // Borrar medico por provedor
 
     dltMedicoPorProvedor(medico_id, provedor_id, token): Observable<any> {
-
-        console.log(medico_id, provedor_id);
        let headers = new HttpHeaders().set('Content-Type', 'application/json');
        return this.http.delete(this.url + '/medico/' + medico_id + '/' + provedor_id + '?token=' + token , {headers : headers});
-
        }
 
+    // Editar datos del medico
+    
+    editInfoMedico(info, token) {
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        this.http.put(this.url + '/medico/' + '?token=' + token , info, {headers : headers});
+    }
 }

@@ -6,29 +6,45 @@ import { Member } from '../../models/member';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ProvedorService } from '../../services/provedor.service';
 import { MedicoService } from '../../services/medico.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [ProvedorService, MedicoService]
+  providers: [ProvedorService, MedicoService, UserService]
 })
 export class LoginComponent implements OnInit {
   public user: Member;
   public status: string;
-
+  public loading = false;
 
 
   constructor(private _router: Router, private _route: ActivatedRoute, private _provedorService: ProvedorService,
-    private _medicoService: MedicoService) {
+    private _medicoService: MedicoService, public _userService: UserService) {
 
     this.user = new Member('', '');
   }
 
   ngOnInit() {
+
+    this.getIdentity();
+  }
+
+  getIdentity() {
+    let identity = this._userService.getIdentity();
+    let token = this._userService.getToken();
+
+    // console.log(identity, token);
+
+    if (identity && token) {
+      this._router.navigate(['/home']);
+    }
   }
 
   login(loginForm) {
+
+    this.loading = true;
 
     let password = CryptoJS.SHA512(this.user.pssw).toString(CryptoJS.enc.Hex);
 
@@ -57,9 +73,12 @@ export class LoginComponent implements OnInit {
         this.status = 'login_false';
       }
 
+      this.loading = false;
+
     }, (err) => {
       console.log(err);
       this.status = 'error';
+      this.loading = false;
     });
 
     // this._router.navigate(['/home']);
@@ -68,6 +87,8 @@ export class LoginComponent implements OnInit {
 
 
   identity(id, bol) {
+
+    this.loading = true;
 
       console.log(id);
 
@@ -80,8 +101,10 @@ export class LoginComponent implements OnInit {
           this._router.navigate(['/home']);
 
            // this._router.navigate(['/home/', response.id_usuario, response.esAdmin ]);
+           this.loading = false;
 
         }, (err) => {
+          this.loading = false;
           console.log(err);
         });
 
@@ -93,7 +116,9 @@ export class LoginComponent implements OnInit {
           let identity = response[0];
           localStorage.setItem('identity', JSON.stringify(identity));
           this._router.navigate(['/home']);
+          this.loading = false;
         }, (err) => {
+          this.loading = false;
           console.log(err);
         });
 

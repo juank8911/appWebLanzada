@@ -1,0 +1,8 @@
+#text-area-perfil textarea {
+    width: 800px;
+}
+
+#btn-guardar{
+    margin-bottom: 100px;
+    text-align: right;
+}

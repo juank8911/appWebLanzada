@@ -57,6 +57,15 @@ export class ProvedorService {
         return this.http.get(this.url + '/medicos/' + id);
     }
 
+
+    // Editar datos del perfil de provedor
+
+    editProv(datos, token) {
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this.http.put(this.url + '/provedores/' + '?token=' + token, datos, {headers : headers});
+      }
+
 }
 
 

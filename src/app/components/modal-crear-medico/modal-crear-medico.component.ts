@@ -60,11 +60,12 @@ export class ModalCrearMedicoComponent implements OnInit {
     if (bol === true) {
 
 
-     let info = {cedula: this.medico.medico_id, provedores_id: this.identity.id_provedor, existe: bol};
+     let info = {cedula: this.medico.id, provedores_id: this.identity.id_provedor, existe: bol};
     //  console.log(info);
 
      this._medicoService.postAgregarMedicos(info, token, bol).subscribe( (response) => {
 
+      console.log(response);
       if (response === true) {
 
         // this.presentToast("Medico agregado con exito.");

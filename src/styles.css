@@ -276,6 +276,7 @@
 #perfil-provedor-imagen img {
   height: 250px;
   width: 250px;
+  margin-bottom: 20px;
 }
 
 #perfil-provedor-formulario{

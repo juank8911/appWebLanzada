@@ -43,6 +43,9 @@ import { Global } from './services/global';
 import { UserService } from './services/user.service';
 import { UserGuard } from './services/user.guard';
 
+// Modulo de loader
+import { NgxLoadingModule } from 'ngx-loading';
+
 
 @NgModule({
   declarations: [
@@ -79,6 +82,7 @@ import { UserGuard } from './services/user.guard';
     PublicacionesModule,
     HttpClientModule,
     FormsModule,
+    NgxLoadingModule.forRoot({})
   ],
   providers: [
     appRoutingProviders,

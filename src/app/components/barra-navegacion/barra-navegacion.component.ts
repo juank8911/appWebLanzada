@@ -21,7 +21,7 @@ export class BarraNavegacionComponent implements OnInit {
 
   getIdentity() {
     this.identity = this._userService.getIdentity();
-    console.log(this.identity);
+    // console.log(this.identity);
   }
 
   logOut() {

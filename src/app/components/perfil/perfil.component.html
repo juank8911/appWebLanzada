@@ -2,25 +2,30 @@
   <app-barra-navegacion></app-barra-navegacion>
 </div>
 
-<div class="row">
+<div class="alert alert-success" *ngIf="status == 'update'">Datos actualizados correctamente. </div>
+<div class="alert alert-danger" *ngIf="status == 'no_update'">No se pudo actualizar los datos. </div>
+
+
+<div *ngIf="provedor">
+<div class="row" >
   <div class="col-lg-3">
     <div id="perfil-provedor-imagen">
-        <img src="{{global.apiUrl + identity.avatar}}" alt="">
+        <img src="{{global.apiUrl + provedor.avatar}}" alt="">
         <br>
         <div>
-          <h4><strong>{{identity.nombre}}</strong></h4>
-          <p>Descripcion : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas laboriosam dolore odio in vero ut, fuga aut, consequuntur quia ea doloremque voluptatibus perspiciatis autem veritatis non excepturi fugiat unde rerum officiis nemo optio harum. Quod aliquid odio eaque possimus architecto rem reiciendis sapiente quaerat hic alias iste, cum voluptas aspernatur?</p>
+          <h4><strong>{{provedor.nombre}}</strong></h4>
+          <p>Descripcion : {{provedor.descripcion}}</p>
         </div>
    
     </div>
    
   </div>
-  <div class="col-lg-8">
+  <div class="col-lg-7">
 
     <div id="perfil-provedor-formulario">
       <h2 class="centrar">Informacion de mi cuenta</h2>
 
-      <form action="">
+      <form class="form-signin" #provedorEditForm="ngForm" (ngSubmit)="editarProvedor()">
           <div class="form-group">
               <div  class="input-group-prepend centrar">
                   <span class="input-group-text">Pais</span>
@@ -31,76 +36,81 @@
             </div>
 
             <div class="form-group input-group-prepend">
-                <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
-                <!-- <span class="fab fa-angular"></span> -->
+          
                 <span class="input-group-text">Email</span>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="mail@ejemplo.com" value="{{identity.correo}}" readonly>
-                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="mail@ejemplo.com" value="{{provedor.correo}}" readonly>
+               
               </div>
 
               <div class="form-group input-group-prepend">
-                  <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
                   <span class="input-group-text">Nombre</span>
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de la empresa" value="{{identity.nombre}}" readonly>
-                  <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de la empresa" value="{{provedor.nombre}}" readonly>
+                 
                 </div>
 
                 <div class="form-group input-group-prepend">
-                    <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
                     <span class="input-group-text">Nit</span>
-                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nit" value="{{identity.nit}}" readonly>
-                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nit" value="{{provedor.nit}}" readonly>
+                   
                 </div>
 
                 <br>
                 <h2 class="centrar">Datos de contacto</h2>
                 <br>
 
-                <div class="form-group input-group-prepend">
-                    <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
+                <div class="form-group input-group-prepend" (mouseleave) ="mouseLeave('direccion')" (mouseenter)="mouseEnter('direccion')">
                     <span class="input-group-text">Dirección</span>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Direccion" value="{{identity.direccion}}">
-                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    <input type="text" class="form-control" id="direccion" aria-describedby="emailHelp" placeholder="Direccion" value="{{provedor.direccion}}" name="direccion" #direccion="ngModel" [(ngModel)]="provedor.direccion" (change)="cambio('direccion')" readonly>
+                    <a *ngIf="ver === 'direccion'" (click)="editar('direccion')" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a> 
+                   
                   </div>
 
-                  <div class="form-group input-group-prepend">
-                      <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
+                  <div class="form-group input-group-prepend"  (mouseleave) ="mouseLeave('telefono')" (mouseenter)="mouseEnter('telefono')">
                       <span class="input-group-text">Telefono</span>
-                      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="telefono" value="{{identity.telefono}}">
-                      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                      <input type="number" class="form-control" id="telefono" aria-describedby="emailHelp" placeholder="telefono" value="{{provedor.telefono}}" name="telefono" #telefono="ngModel" [(ngModel)]="provedor.telefono" (change)="cambio('telefono')" readonly>
+                      <a *ngIf="ver === 'telefono'" (click)="editar('telefono')" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                     
                   </div>
 
-                  <div class="form-group input-group-prepend">
-                      <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
+                  <div class="form-group input-group-prepend" (mouseleave) ="mouseLeave('whatsapp')" (mouseenter)="mouseEnter('whatsapp')">
                       <span class="input-group-text">Whatspp</span>
-                      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="whatsapp" value="{{identity.whatsapp}}">
-                      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                      <input type="number" class="form-control" id="whatsapp" aria-describedby="emailHelp" placeholder="whatsapp" value="{{provedor.whatsapp}}" name="whatsapp" #whatsapp="ngModel"  [(ngModel)]="provedor.whatsapp" (change)="cambio('whatsapp')" readonly>
+                      <a *ngIf="ver === 'whatsapp'" (click)="editar('whatsapp')" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                     
                     </div>
 
                   <br>
                   <h2 class="centrar">Datos de provedor</h2>
                   <br>
 
-                  <div class="form-group input-group-prepend">
-                      <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
+                  <div class="form-group input-group-prepend" (mouseleave) ="mouseLeave('nombre')" (mouseenter)="mouseEnter('nombre')">
                       <span class="input-group-text">Nombre</span>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nombre clinica" value="{{identity.nombre}}">
-                      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                      <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="nombre clinica" value="{{provedor.nombre}}" name="nombre" #nombre="ngModel" [(ngModel)]="provedor.nombre" (change)="cambio('nombre')" readonly>
+                      <a *ngIf="ver === 'nombre'" (click)="editar('nombre')" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>   
                   </div>
 
-                  <div class="form-group input-group-prepend">
-                      <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
+                  <div class="form-group input-group-prepend" (mouseleave) ="mouseLeave('video')" (mouseenter)="mouseEnter('video')">
+                    <span class="input-group-text">link video de you tube</span>
+                    <input type="text" class="form-control" id="video" aria-describedby="emailHelp" placeholder="link video de youtube" value="{{provedor.video}}" name="video" #video="ngModel" [(ngModel)]="provedor.video" (change)="cambio('video')" readonly>
+                    <a *ngIf="ver === 'video'" (click)="editar('video')" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                </div>
+
+                  <div class="form-group input-group-prepend" (mouseleave) ="mouseLeave('link')" (mouseenter)="mouseEnter('link')">
                       <span class="input-group-text">link sitio web / fan page facebook</span>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="link sitio web / fan page facebook" value="{{identity.link}}">
-                      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                      <input type="text" class="form-control" id="link" aria-describedby="emailHelp" placeholder="link sitio web / fan page facebook" value="{{provedor.link}}" name="link" #link="ngModel" [(ngModel)]="provedor.link" (change)="cambio('link')" readonly>
+                      <a *ngIf="ver === 'link'" (click)="editar('link')" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
                   </div>
 
-                  <div class="form-group input-group-prepend">
-                      <!-- <label for="exampleInputEmail1">Nombre medico</label> -->
+                  <div class="form-group input-group-prepend" id="text-area-perfil" (mouseleave) ="mouseLeave('descripcion')" (mouseenter)="mouseEnter('descripcion')">
                       <span class="input-group-text">Descripcion</span>
-                      <textarea>{{identity.descripcion}}</textarea>
-                      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                      <textarea id="descripcion" (change)="cambio('descripcion')" name="descripcion" #descripcion="ngModel" [(ngModel)]="provedor.descripcion"  readonly>{{provedor.descripcion}}</textarea>
+                      <a *ngIf="ver === 'descripcion'" (click)="editar('descripcion')" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
                   </div>
+
+                  <div id="btn-guardar">
+                    <button class="btn btn-success" type="submit" [disabled]="!provedorEditForm.form.valid">Guardar</button>
+                  </div>
+                
               
       </form>
 
@@ -108,4 +118,54 @@
 
   </div>
 
+ </div>
+
 </div>
+
+<div *ngIf="medico">
+
+    <div class="row" >
+        <div class="col-lg-3">
+          <div id="perfil-provedor-imagen">
+              <img src="{{global.apiUrl + provedor.avatar}}" alt="">
+              <br>
+              <div>
+                <h4><strong>Nombre</strong></h4>
+                <div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a  (click)="pestana('informacion')">Información</a></li>
+                        <li class="list-group-item"><a  (click)="pestana('estudios')">Estudios</a></li>
+                      </ul>
+                
+                        <!-- <ion-segment [(ngModel)]="mymodel">
+                      <ion-segment-button class="segment"value="segment1">
+                        <p class="p">Mis citas</p> 
+                      </ion-segment-button>
+                      <ion-segment-button  class="segment" value="segment2">
+                      <p class="p">Beneficiarios</p> 
+                      </ion-segment-button>
+                      <ion-segment-button  class="segment" value="segment3">
+                        <p class="p">Mascotas</p> 
+                        </ion-segment-button>
+                  </ion-segment> -->
+                </div>
+              </div>
+         
+          </div>
+         
+        </div>
+        <div class="col-lg-7">
+
+            <div [ngSwitch]="mymodel">
+                <div *ngSwitchCase="'informacion'" >
+                  <p>Información</p>
+                </div>
+            
+                <div *ngSwitchCase="'estudios'">   
+                  <p>Estudios</p>    
+                </div>             
+            </div>
+        </div>
+       </div>
+</div>
+
