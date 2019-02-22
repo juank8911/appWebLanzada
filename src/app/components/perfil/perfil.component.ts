@@ -96,7 +96,24 @@ export class PerfilComponent implements OnInit {
   }
 
   pestana(pestana) {
+    var li = document.getElementById(pestana);
+    document.getElementById(pestana).addEventListener('click', function() {
+
+      if (li.id === 'informacion')  {
+
+        let l = document.getElementById('estudios');
+        l.className = 'list-group-item';
+        li.className = 'list-group-item active';
+      } else {
+        let l = document.getElementById('informacion');
+        l.className = 'list-group-item';
+        li.className = 'list-group-item active';
+      }
+    });
     this.mymodel = pestana;
+
+
+    console.log(li);
   }
 }
 

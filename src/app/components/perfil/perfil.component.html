@@ -133,21 +133,9 @@
                 <h4><strong>Nombre</strong></h4>
                 <div>
                     <ul class="list-group">
-                        <li class="list-group-item"><a  (click)="pestana('informacion')">Información</a></li>
-                        <li class="list-group-item"><a  (click)="pestana('estudios')">Estudios</a></li>
-                      </ul>
-                
-                        <!-- <ion-segment [(ngModel)]="mymodel">
-                      <ion-segment-button class="segment"value="segment1">
-                        <p class="p">Mis citas</p> 
-                      </ion-segment-button>
-                      <ion-segment-button  class="segment" value="segment2">
-                      <p class="p">Beneficiarios</p> 
-                      </ion-segment-button>
-                      <ion-segment-button  class="segment" value="segment3">
-                        <p class="p">Mascotas</p> 
-                        </ion-segment-button>
-                  </ion-segment> -->
+                        <li class="list-group-item" id="informacion" (click)="pestana('informacion')">Información</li>
+                        <li class="list-group-item" id="estudios"  (click)="pestana('estudios')">Estudios</li>
+                    </ul>
                 </div>
               </div>
          
